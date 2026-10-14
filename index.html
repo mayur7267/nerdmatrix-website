@@ -231,6 +231,8 @@ section[id]{scroll-margin-top:var(--nav-h)}
 #contact{padding-bottom:clamp(72px,8vw,120px)}
 .c-info{display:grid;gap:28px;justify-items:start}
 .c-line span{display:block;font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3)}
+.c-line b a{transition:color .3s}
+.c-line b a:hover{color:var(--accent)}
 .c-line b{display:block;margin-top:8px;font:500 20px/1.3 var(--sans);letter-spacing:-.02em}
 form.brief{display:grid;gap:26px;padding:clamp(22px,3vw,36px);border:1px solid var(--line);border-radius:28px;background:var(--bg-2)}
 .fgroup{display:grid;gap:12px;margin:0;padding:0;border:0;min-width:0}
@@ -482,6 +484,7 @@ form.brief .btn{justify-self:start}
       <p class="lead">Tell us a little about your project. We reply within one working day.</p>
       <div class="c-line"><span>Email</span><b data-email></b></div>
       <div class="c-line"><span>WhatsApp</span><b data-phone></b></div>
+      <div class="c-line"><span>Instagram</span><b><a data-insta href="https://www.instagram.com/nerdmatrixx/" target="_blank" rel="noopener">@nerdmatrixx ↗</a></b></div>
     </div>
     <form class="brief" id="brief" novalidate data-reveal style="--d:1">
       <fieldset class="fgroup"><legend class="flabel">I'm interested in</legend>
@@ -518,13 +521,14 @@ form.brief .btn{justify-self:start}
       <p>NerdMatrix is a web design and development studio building custom websites for brands across India.</p>
       <div class="f-cols">
         <div><h4>Studio</h4><ul><li><a href="#work">Work</a></li><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
-        <div><h4>Connect</h4><ul><li><a href="#contact">Start a project</a></li><li><a data-insta href="#" target="_blank" rel="noopener">Instagram</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+        <div><h4>Connect</h4><ul><li><a href="#contact">Start a project</a></li><li><a data-insta href="https://www.instagram.com/nerdmatrixx/" target="_blank" rel="noopener">Instagram</a></li><li><a href="#faq">FAQ</a></li></ul></div>
       </div>
     </div>
     <div class="f-mark" data-reveal aria-hidden="true"><img src="img/logo-light.png" alt=""><span class="fl" style="--li:0">N</span><span class="fl" style="--li:1">e</span><span class="fl" style="--li:2">r</span><span class="fl" style="--li:3">d</span><span class="fl" style="--li:4">M</span><span class="fl" style="--li:5">a</span><span class="fl" style="--li:6">t</span><span class="fl" style="--li:7">r</span><span class="fl" style="--li:8">i</span><span class="fl" style="--li:9">x</span></div>
     <div class="f-bottom">
       <p>© <span id="yr">2026</span> NerdMatrix. All rights reserved.</p>
       <p>India · <span id="clock">--:--</span> IST</p>
+      <a data-insta href="https://www.instagram.com/nerdmatrixx/" target="_blank" rel="noopener">Instagram ↗</a>
       <a href="#top">Back to top ↑</a>
     </div>
   </div>
