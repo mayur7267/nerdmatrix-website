@@ -150,7 +150,9 @@ section[id]{scroll-margin-top:var(--nav-h)}
 @media (max-width:600px){.services{grid-template-columns:minmax(0,1fr)}.svc{min-height:0}}
 
 /* Work */
-.work{display:grid;grid-template-columns:1.4fr 1fr;gap:12px}
+.work{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.work .next{grid-column:1/-1;flex-direction:row;align-items:center;flex-wrap:wrap}
+.work .next>div{display:grid;gap:14px;max-width:60ch}
 .proj{position:relative;display:grid;gap:18px;padding:12px 12px 22px;border:1px solid var(--line);border-radius:28px;background:var(--bg-2);transition:border-color .4s}
 .proj:hover{border-color:var(--line-2)}
 .proj figure{position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:var(--card)}
@@ -302,6 +304,21 @@ form.brief .btn{justify-self:start}
 [data-tilt]{transform-style:preserve-3d;will-change:transform}
 [data-tilt].tilting{transition:transform .12s linear,border-color .4s}
 .scr{font-variant-ligatures:none}
+
+/* Instagram follow card */
+.ig{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;gap:16px;width:100%;max-width:440px;padding:14px 14px 14px 14px;border:1px solid var(--line);border-radius:22px;background:var(--bg-2);transition:border-color .4s,transform .5s var(--ease)}
+.ig::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,rgba(245,133,41,.16),rgba(221,42,123,.16) 50%,rgba(129,52,175,.16));opacity:0;transition:opacity .5s}
+.ig:hover{border-color:rgba(221,42,123,.5);transform:translateY(-3px)}
+.ig:hover::before{opacity:1}
+.ig-icon{flex:none;display:grid;place-items:center;width:56px;height:56px;border-radius:16px;background:linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF);color:#fff;transition:transform .6s var(--ease)}
+.ig:hover .ig-icon{transform:rotate(-8deg) scale(1.06)}
+.ig-icon svg{width:28px;height:28px}
+.ig-txt{display:grid;gap:4px;min-width:0;flex:1}
+.ig-txt b{font:600 18px/1.2 var(--sans);letter-spacing:-.02em}
+.ig-txt b i{font-style:normal;background:linear-gradient(90deg,#F58529,#DD2A7B);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ig-txt span{font:500 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3)}
+.ig .arrow-c{width:40px;height:40px}
+.ig:hover .arrow-c{transform:rotate(45deg);background:#DD2A7B;color:#fff}
 </style>
 </head>
 <body>
@@ -395,10 +412,15 @@ form.brief .btn{justify-self:start}
         <div class="proj-meta"><div><h3>Café &amp; Restaurant</h3><p>Concept site for a specialty coffee chain</p></div><span class="arrow-c"><svg><use href="#ar"/></svg></span></div>
         <ul class="tags"><li>Web design</li><li>Animation</li><li>Reservations</li><li>Subscriptions</li></ul>
       </a>
-      <a class="next" href="#contact" data-reveal style="--d:1">
-        <p class="eyebrow">Next up</p>
-        <h3>Your brand<br>could be here<span class="dot">.</span></h3>
-        <p>Tell us about your business and we'll show you a design direction before you commit.</p>
+      <a class="proj" data-tilt href="https://www.dreamtouchstudio.com" target="_blank" rel="noopener" data-reveal style="--d:1" data-cursor>
+        <figure><img src="img/work-dreamtouch.jpg" alt="Homepage of the Dream Touch Design Studio website" loading="lazy"></figure>
+        <div class="proj-meta"><div><h3>Dream Touch</h3><p>A premium interior design studio website built to convert visitors into clients. Elegant layouts, curated portfolio, and high-conversion contact flows.</p></div><span class="arrow-c"><svg><use href="#ar"/></svg></span></div>
+        <ul class="tags"><li>Interior design</li><li>Portfolio</li><li>Lead capture</li><li>Live client</li></ul>
+      </a>
+      <a class="next" href="#contact" data-reveal style="--d:2">
+        <div><p class="eyebrow">Next up</p>
+        <h3>Your brand could be here<span class="dot">.</span></h3>
+        <p>Tell us about your business and we'll show you a design direction before you commit.</p></div>
         <span class="btn btn-light" style="align-self:flex-start">Start a project <span class="ic"><svg><use href="#ar"/></svg></span></span>
       </a>
     </div>
@@ -484,7 +506,11 @@ form.brief .btn{justify-self:start}
       <p class="lead">Tell us a little about your project. We reply within one working day.</p>
       <div class="c-line"><span>Email</span><b data-email></b></div>
       <div class="c-line"><span>WhatsApp</span><b data-phone></b></div>
-      <div class="c-line"><span>Instagram</span><b><a data-insta href="https://www.instagram.com/nerdmatrixx/" target="_blank" rel="noopener">@nerdmatrixx ↗</a></b></div>
+      <a class="ig" data-insta href="https://www.instagram.com/nerdmatrixx/" target="_blank" rel="noopener">
+        <span class="ig-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></span>
+        <span class="ig-txt"><b>Follow us <i>@nerdmatrixx</i></b><span>Behind the scenes · Projects · Updates</span></span>
+        <span class="arrow-c"><svg><use href="#ar"/></svg></span>
+      </a>
     </div>
     <form class="brief" id="brief" novalidate data-reveal style="--d:1">
       <fieldset class="fgroup"><legend class="flabel">I'm interested in</legend>
